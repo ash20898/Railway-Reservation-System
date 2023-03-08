@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Railway Reservation System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+  <h1>Railway Reservation System</h1>
+  <hr>
+  <h2>Update Trip</h2>
+  <form th:action="@{/UpdateTrip/{id}(id=${Trip.id})}" th:object="${Trip}" method="post">
+    <input type="text" th:field="*{Number}"
+           placeholder="Trip Number" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{Source}"
+           placeholder="Trip Source" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{Destination}"
+           placeholder="Trip Destination" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{Price}"
+           placeholder="Trip Price" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{TrainId}"
+           placeholder="Train Id of the Trip' " class="form-control mb-4 col-4">
+    <hr>
+    <button type="submit" class="btn btn-info col-4">Update Trip</button>
+
+  </form>
+  <hr>
+  <a th:href="@{/Trips}" class="btn btn-danger">Back to Trips List</a>
+  <a th:href="@{/AdminPage}" class="btn btn-danger">Back to Admin Page</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Railway Reservation System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+  <h1>Railway Reservation System</h1>
+  <hr>
+  <h2>Update Train</h2>
+  <form th:action="@{/UpdateTrain/{id}(id=${Train.id})}" th:object="${Train}" method="post">
+    <input type="text" th:field="*{Number}"
+           placeholder="Train Number" class="form-control mb-4 col-4">
+    <input type="text" th:field="*{Line}"
+           placeholder="Train Line" class="form-control mb-4 col-4">
+
+    <hr>
+    <button type="submit" class="btn btn-info col-4">Update Train</button>
+
+  </form>
+  <hr>
+  <a th:href="@{/Trains}" class="btn btn-danger">Back to Trains List</a>
+  <a th:href="@{/AdminPage}" class="btn btn-danger">Back to Admin Page</a>
+</div>
+</body>
+</html>

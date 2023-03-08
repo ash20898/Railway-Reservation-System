@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Railway Reservation System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+  <h1>All Trips</h1>
+  <hr>
+  <table border="1" class="table table-striped table-responsive-md">
+    <thead>
+    <tr>
+      <th>Trip Number</th>
+      <th>Trip Source</th>
+      <th>Trip Destination</th>
+      <th>Trip Price</th>
+      <th>Train Id</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="trip : ${AllTrips}">
+
+      <td th:text="${trip.Number}"></td>
+      <td th:text="${trip.Source}"></td>
+      <td th:text="${trip.Destination}"></td>
+      <td th:text="${trip.Price}"></td>
+      <td th:text="${trip.TrainId}"></td>
+      <td>
+        <a class="btn btn-danger">Book</a>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+  <a th:href="@{/Login}" class="btn btn-danger">Log Out</a>
+  <a th:href="@{/GetNormalUserPage}" class="btn btn-danger">Back to User Page</a>
+</div>
+</body>
+</html>
