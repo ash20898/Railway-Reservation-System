@@ -1,2 +1,2 @@
 # Railway-Reservation-System
-Spring Boot Application 
+Spring web MVC Application 
